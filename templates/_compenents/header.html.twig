@@ -1,0 +1,25 @@
+<header class="header">
+
+	<h1 class="titre-logo">
+		<img class="logo" src="{{ asset('images/logo.jpg') }}" alt="Mon logo">
+		My Photo Cliches Precieux
+	</h1>
+
+	<nav>
+		<a href="{{ path('Accueil') }}">Accueil</a>
+		<a href="{{ path('app_qui_suis_je') }}#qui-suis-je">Qui suis-je ?</a>
+		<a href="{{ path('Accueil') }}">Info séances</a>
+		<a href="{{ path('app_contact') }}">Contacte</a>
+
+		{% if app.user %}
+			{# Utilisateur connecté : on affiche le profil et le bouton déconnexion #}
+			<a href="{{ path('app_profile') }}">Mon profil</a>
+			<a href="{{ path('app_logout') }}">Se déconnecter</a>
+		{% else %}
+			{# Utilisateur non connecté : on affiche S’inscrire / Se connecter #}
+			<a href="{{ path('app_register') }}">S’inscrire</a>
+			<a href="{{ path('app_login') }}">Se connecter</a>
+		{% endif %}
+	</nav>
+
+</header>

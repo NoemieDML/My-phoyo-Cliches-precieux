@@ -1,0 +1,194 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<div class="img-index">
+
+		<h1>Photographe à Beuvry</h1>
+		<p>En tant que photographe, je capture vos plus beaux instants de vie à Beuvry, en studio ou à domicile. Chaque séance est personnalisée : nous échangeons d’abord sur vos envies et le style d’images souhaité, puis nous fixons ensemble la date, le lieu et les détails pour créer des souvenirs uniques et intemporels.</p>
+		<hr>
+		<a class="link-index" href="{{ path('app_contact') }}">Me Contacter</a>
+
+		<div class="icon-index">
+			<div>
+				<img class="icon" src="{{ asset('images/price.webp') }}" alt="Tarifs accessibles">
+				<p>Des tarifs accessibles</p>
+			</div>
+			<div>
+				<img class="icon" src="{{ asset('images/adaptabilite.png') }}" alt="Adaptabilité à toutes les envies">
+				<p>Adaptabilité à toutes les envies</p>
+			</div>
+			<div>
+				<img class="icon" src="{{ asset('images/confiance.png') }}" alt="Confiance">
+				<p>Des clichés naturels et élégants</p>
+			</div>
+
+			<div>
+				<img class="icon" src="{{ asset('images/a lecoute.webp') }}" alt="À l'écoute">
+				<p>Un accompagnement personnalisé</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="mariage-index">
+		<div class="mariage">
+			<h1>Photographie de mariages</h1>
+			<p>Sollicitez-moi pour la création de beaux clichés de votre mariage. Que vous souhaitiez couvrir uniquement la cérémonie, les préparatifs, le vin d’honneur ou la journée entière, mes formules sont totalement modulables.</p>
+			<a class="btn-mariage" href="{{ path('Accueil') }}">Immortalisez votre union</a>
+		</div>
+		<div class="mariage">
+			<img src="{{ asset('images/photo mariage 1 index.webp') }}" alt="photo mariage">
+		</div>
+	</div>
+
+
+	<section class="sec-mariage">
+		<div class="container-mariage">
+
+			<div class="info-mariage-img">
+				<img src="{{ asset('images/Jeune couple à Beuvry. Photo souvenir de mariage.webp') }}" alt="Jeune couple à Beuvry mariage">
+			</div>
+
+			<div class="info-mariage">
+				<h1>Des clichés originaux pour immortaliser l’atmosphère de votre jour J</h1>
+				<p>Un mariage, c’est une énergie partagée, des regards, des éclats de rire et des gestes tendres. Mon approche consiste à capter ces éléments souvent invisibles, mais profondément significatifs. Je prête attention aux petits détails, aux interactions naturelles et à l’environnement.</p>
+			</div>
+
+		</div>
+
+		<div class="container-mariage">
+
+			<div class="info-mariage-img">
+				<img src="{{ asset('images/Reportage photo de cérémonie de mariage à Beuvry.webp') }}" alt="photo de cérémonie de mariage">
+			</div>
+
+			<div class="info-mariage">
+				<h1>Un reportage photo fidèle à votre cérémonie spéciale</h1>
+				<p>Photographier un mariage, c’est bien plus que capturer de belles images : c’est raconter une histoire, la vôtre. Mon travail s’inscrit dans une démarche de reportage, avec une sensibilité particulière pour les émotions vraies et les instants spontanés. Je m’efface pour mieux observer, laissant l’événement se dérouler naturellement.</p>
+			</div>
+
+		</div>
+	</section>
+
+	<div class="portraits-index">
+
+		<div class="portraits">
+			<img src="{{ asset('images/Réalisation de portraits photographiques à Beuvry.webp') }}" alt="photo portraits">
+		</div>
+		<div class="portraits">
+			<h1>Réalisation de portraits photographiques</h1>
+			<p>Sollicitez-moi pour la création de beaux clichés de votre mariage. Que vous souhaitiez couvrir uniquement la cérémonie, les préparatifs, le vin d’honneur ou la journée entière, mes formules sont totalement modulables.</p>
+			<a class="btn-portraits" href="{{ path('Accueil') }}">Immortalisez votre union</a>
+		</div>
+	</div>
+
+	<div class="maternité">
+		<h1>Photographie de maternité</h1>
+		<p>La maternité est une période chargée d’émotion, que je prends plaisir à immortaliser. J’accorde une grande attention à la douceur, au confort et à la bienveillance durant ces séances de grossesse et de naissance. Les shootings peuvent se faire en solo, en couple, avec les aînés ou en toute intimité.</p>
+		<a class="btn-maternité" href="{{ path('Accueil') }}">Capturez ce moment important</a>
+	</div>
+
+	<div class="grossesse">
+		<div class="img-grossesse">
+			<img src="{{ asset('images/Des images pleines de tendresse de grossesse à Beuvry.webp') }}" alt="photo portraits">
+		</div>
+		<div class="info-grossesse">
+			<h1>Des images pleines de tendresse de votre grossesse</h1>
+			<p>La grossesse est un moment rempli d’émotions intimes et de transformations. Lors de chaque shooting, je veille à créer une atmosphère douce, respectueuse et apaisante pour que vous puissiez vivre ce moment avec sérénité.</p>
+		</div>
+	</div>
+
+	<div class="bebe">
+		<div class="info-bebe">
+			<h1>Des photos pour célébrer la venue de votre bébé</h1>
+			<p>L’arrivée d’un enfant transforme une vie et c’est avec sensibilité que je photographie ces premiers instants. Je mets en lumière les émotions partagées, les gestes tendres et les regards émerveillés. Qu’il s’agisse de vos premiers jours avec bébé ou d’un moment précieux avec vos aînés, chaque cliché devient un véritable témoignage de votre histoire.</p>
+		</div>
+		<div class="img-bebe">
+			<img src="{{ asset('images/Des photos pour célébrer la venue de bébé à Beuvry.webp') }}" alt="photo portraits">
+		</div>
+	</div>
+
+
+	<div class="evenement-index">
+
+		<div class="evenement1">
+			<h1>Photographie événementielle</h1>
+			<p>Je réalise des séances photos de votre événement personnel ou professionnel. Baptêmes, anniversaires, baby showers, séminaires, lancements… Chaque moment fort mérite d’être capturé avec soin. Mon œil de photographe me permet de saisir l’instant, l’ambiance et les interactions.
+			</p>
+			<a class="btn-evenement" href="{{ path('Accueil') }}">Capturez votre événement</a>
+		</div>
+		<div class="evenement">
+			<img src="{{ asset('images/Photographie événementielle et scolaire à Beuvry.webp') }}" alt="photo portraits">
+		</div>
+
+		<div class="evenement2">
+			<h1>Photographie scolaire</h1>
+			<p>Au service des écoles et des établissements de la petite enfance, j’interviens pour des séances photos scolaires. Ces souvenirs d’enfance sont attendus chaque année par les familles. Je prends soin d’instaurer une ambiance rassurante et conviviale pour que chaque enfant soit mis en valeur.</p>
+			<a class="btn-evenement" href="{{ path('Accueil') }}">Capturez ce moment scolaire</a>
+		</div>
+	</div>
+
+	<section id="qui-suis-je">
+		<div class="qui-suis-je-index">
+
+			<div class="qui-suis-je">
+				<h1>Qui suis-je ?</h1>
+				<p>Je m'appelle Alisone, photographe professionnelle autodidacte et passionnée depuis 2021. Basée à Beuvry, je suis également maman de trois enfants.. Au fil des années, j’ai développé une sensibilité particulière pour les moments sincères et les relations humaines. Pour cela, je réalise des séances photos personnalisées pour les particuliers, les professionnels et même les mairies. Mon approche est simple et bienveillante, toujours guidée par l’envie de capturer votre histoire à travers des images vraies, pleines d’émotion.</p>
+			</div>
+			<div class="qui-suis-je">
+				<img src="{{ asset('images/Photographe autodidacte installée à Beuvry.webp') }}" alt="photo couple">
+			</div>
+		</div>
+	</section>
+	<section class="sec-rdv">
+		<div class="rdv-intervention">
+			<h1>Points de rendez-vous</h1>
+			<p>Pour faciliter votre départ, plusieurs lieux de rendez-vous sont disponibles :</p>
+			<ul>
+				<div class="col1-index">
+					<li>
+						<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique"></span>Parking du cimetière Rotonde</li>
+					<li>
+						<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique"></span>Arrêt de tram Ducs d’Alsace</li>
+				</div>
+				<div class="col2-index">
+					<li>
+						<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique"></span>Arrêt de tram Montagne verte</li>
+					<li>
+						<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique"></span>Arrêt de tram D’Alsace</li>
+				</div>
+			</ul>
+		</div>
+
+		<div class="rdv-intervention">
+			<h1>Zone d’intervention</h1>
+			<p>Je me déplace dans un rayon de 50 km autour de Beuvry, particulièrement à :</p>
+			<ul>
+				<div class="col1-index">
+					<li>
+						<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique"></span>Béthune</li>
+					<li>
+						<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique">Verquigneul</li>
+					</li>
+					<li></li>
+				</div>
+				<div class="col2-index">
+					<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique">Verquin</li>
+				</li>
+				<li>
+					<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique">Hazebrouck</li>
+				</li>
+			</div>
+			<div class="col3-index">
+				<li>
+					<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique">Hénin-Beaumont</li>
+				</li>
+				<li>
+					<span><img src="{{ asset('images/appareil-photo-numerique.png') }}" alt="appareil-photo-numerique">Nœux-les-Mines</li>
+				</li>
+			</div>
+		</ul>
+	</div>
+</section>{% endblock %}

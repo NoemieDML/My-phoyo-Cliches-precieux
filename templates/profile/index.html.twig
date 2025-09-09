@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="profile-container">
+		<h1 class="profile-title">
+			Bienvenue sur votre profil
+			{{ app.user.firstName }}
+		</h1>
+
+		<div class="photos-grid">
+			{% for photo in photos %}
+				<div class="photo-card">
+					<h2 class="photo-name">{{ photo.name }}</h2>
+					<p class="photo-date">Ajoutée le
+						{{ photo.createdAt|date('d/m/Y') }}</p>
+					<img class="photo-img" src="{{ asset(photo.imagePath) }}" alt="{{ photo.name }}">
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

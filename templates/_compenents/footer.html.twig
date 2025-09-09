@@ -1,0 +1,26 @@
+<nav class="footer">
+	<img class="logo-footer" src="{{ asset('images/logo.jpg') }}" alt="Mon logo">
+	<div class="container-col">
+		<div class="col1-footer">
+			<a href="{{ path('Accueil') }}">Accueil</a>
+			<a href="{{ path('app_qui_suis_je')}}#qui-suis-je">Qui suis-je ?</a>
+			<a href="{{ path('Accueil') }}">Info séances</a>
+
+			<a href="{{ path('app_contact') }}">Contacte</a>
+		</div>
+		<hr>
+		<div class="rgpd">
+			<a href="{{ path('app_législationRGPD') }}">Législation & RGPD</a>
+			<p>© 2025 MY PHOTO</p>
+			<p>Créer par Noémie De Mol</p>
+		</div>
+	</div>
+
+	<div class="col2-footer">
+		<div class="reseau">
+			<a href="{{ path('Accueil') }}"><img src="{{ asset("images/gmbd.png") }}" alt="liens info google"></a>
+			<a href="{{ path('Accueil') }}"><img src="{{ asset("images/instagram.png") }}" alt="liens info google"></a>
+			<a href="{{ path('Accueil') }}"><img src="{{ asset("images/fac.webp") }}" alt="liens info google"></a>
+		</div>
+	</div>
+</nav>
