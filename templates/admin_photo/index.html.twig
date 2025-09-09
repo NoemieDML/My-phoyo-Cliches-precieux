@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1 class="title">Gestion des photos</h1>
+
+	{# Messages flash #}
+	{% for message in app.flashes('success') %}
+		<div class="flash flash-success">{{ message }}</div>
+	{% endfor %}
+
+	{# Formulaire d'ajout de photo #}
+	<h2 class="subtitle">Ajouter une nouvelle photo</h2>
+
+	{{ form_start(form, {'attr': {'class': 'photo-form'}}) }}
+
+	{{ form_row(form.name, {'attr': {'class': 'form-input'}}) }}
+	{{ form_row(form.image_path, {'attr': {'class': 'form-input'}}) }}
+	{{ form_row(form.createdAt, {'attr': {'class': 'form-input'}}) }}
+	{{ form_row(form.user, {'attr': {'class': 'form-input'}}) }}
+
+	<button type="submit" class="btn btn-primary">Ajouter</button>
+	{{ form_end(form) }}
+
+	{# Liste des photos existantes #}
+	<h2 class="subtitle">Liste des photos</h2>
+	<ul class="photo-list">
+		{% for photo in photos %}
+			<li class="photo-item">
+				<span class="photo-name">{{ photo.name }}</span>
+				-
+				<span class="photo-user">{{ photo.user.email }}</span>
+				-
+				<span class="photo-date">{{ photo.createdAt|date('d/m/Y') }}</span>
+
+				{# Formulaire de suppression sécurisé avec token CSRF #}
+				<form action="{{ path('admin_photos_delete', {'id': photo.id}) }}" method="post" style="display:inline">
+					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ photo.id) }}">
+					<button class="btn btn-danger btn-sm" type="submit">Supprimer</button>
+				</form>
+			</li>
+		{% else %}
+			<li>Aucune photo pour le moment.</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

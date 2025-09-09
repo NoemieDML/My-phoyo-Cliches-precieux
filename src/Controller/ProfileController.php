@@ -12,10 +12,12 @@ class ProfileController extends AbstractController
     #[Route('/profile', name: 'app_profile')]
     public function index(PhotoRepository $photoRepository): Response
     {
-        // Récupération de toutes les photos en BDD
-        $photos = $photoRepository->findAll();
+        // Récupérer l'utilisateur connecté
+        $user = $this->getUser();
 
-        // On passe "photos" à la vue
+        // Récupérer uniquement les photos de cet utilisateur
+        $photos = $photoRepository->findBy(['user' => $user]);
+
         return $this->render('profile/index.html.twig', [
             'photos' => $photos,
         ]);
