@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="profile-container">
+		<a href="{{ path('list_user') }}" class="back-button">Accéder à la liste des utilisateurs</a>
+		<a href="{{ path('admin_photos') }}" class="back-button">Accéder à la liste des Photos</a>
+		<a href="{{ path('admin_contacts') }}" class="back-button">Accéder au contact</a>
+	</div>
+{% endblock %}

@@ -4,7 +4,7 @@
 		<div class="col1-footer">
 			<a href="{{ path('Accueil') }}">Accueil</a>
 			<a href="{{ path('app_qui_suis_je')}}#qui-suis-je">Qui suis-je ?</a>
-			<a href="{{ path('Accueil') }}">Info séances</a>
+			<a href="{{ path('app_info_seance') }}">Info séances</a>
 
 			<a href="{{ path('app_contact') }}">Contacte</a>
 		</div>
@@ -17,10 +17,23 @@
 	</div>
 
 	<div class="col2-footer">
-		<div class="reseau">
-			<a href="{{ path('Accueil') }}"><img src="{{ asset("images/gmbd.png") }}" alt="liens info google"></a>
-			<a href="{{ path('Accueil') }}"><img src="{{ asset("images/instagram.png") }}" alt="liens info google"></a>
-			<a href="{{ path('Accueil') }}"><img src="{{ asset("images/fac.webp") }}" alt="liens info google"></a>
+		<div
+			class="reseau">
+			<!-- Lien externe (Google Business) -->
+			<a href="https://www.google.com/search?q=my+photo+clich%C3%A9+pr%C3%A9cieux+beuvry" target="_blank" rel="noopener noreferrer">
+				<img src="{{ asset('images/gmbd.png') }}" alt="Lien vers Google Business">
+			</a>
+
+			<!-- Lien interne (vers route Accueil) -->
+			<a href="https://www.instagram.com/myphoto.clichesprecieux/">
+				<img src="{{ asset('images/instagram.png') }}" alt="Lien vers Instagram">
+			</a>
+
+			<!-- Lien interne (idem Accueil pour l'exemple, à remplacer par ta route Facebook si tu en as une) -->
+			<a href="https://www.facebook.com/clicherprecieux">
+				<img src="{{ asset('images/fac.webp') }}" alt="Lien vers Facebook">
+			</a>
 		</div>
 	</div>
+
 </nav>

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<div class="admin-container">
+		<a href="{{ path('app_admin') }}" class="back-button">← Retour à la page admin</a>
+		<h1 class="admin-title">Liste des utilisateurs</h1>
+
+		<form method="get" class="search-form">
+			<input type="text" name="search" placeholder="Rechercher par email" value="{{ search }}">
+			<button type="submit">Rechercher</button>
+		</form>
+
+		<table class="admin-table">
+			<thead>
+				<tr>
+					<th>Email</th>
+					<th>Nombre de photos</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in users %}
+					{% set user = row[0] %}
+					<tr>
+						<td>{{ user.email }}</td>
+						<td>{{ row.photoCount }}</td>
+						<td>
+							<a href="{{ path('admin_users_show', {id: user.id}) }}" class="btn btn-show">Voir Profil</a>
+							<a href="{{ path('admin_users_delete', {id: user.id}) }}" class="btn btn-delete" onclick="return confirm('Supprimer cet utilisateur ?');">Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+{% endblock %}

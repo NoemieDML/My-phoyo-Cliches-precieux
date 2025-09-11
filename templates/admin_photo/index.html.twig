@@ -1,36 +1,24 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
-	<div class="admin-container">
-		<h1 class="admin-title">Liste des utilisateurs</h1>
+	<div class="profile-container">
 
-		<form method="get" class="search-form">
-			<input type="text" name="search" placeholder="Rechercher par email" value="{{ search }}">
-			<button type="submit">Rechercher</button>
-		</form>
+		<a href="{{ path('app_admin') }}" class="back-button">← Retour à la page admin</a>
 
-		<table class="admin-table">
-			<thead>
-				<tr>
-					<th>Email</th>
-					<th>Nombre de photos</th>
-					<th>Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for row in users %}
-					{% set user = row[0] %}
-					<tr>
-						<td>{{ user.email }}</td>
-						<td>{{ row.photoCount }}</td>
-						<td>
-							<a href="{{ path('admin_users_show', {id: user.id}) }}" class="btn btn-show">Voir Profil</a>
-							<a href="{{ path('admin_users_delete', {id: user.id}) }}" class="btn btn-delete" onclick="return confirm('Supprimer cet utilisateur ?');">Supprimer</a>
-						</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-	</div>
+		<h1>Galerie Photos</h1>
 
-{% endblock %}
+		<div class="photos-grid">
+			{% for photo in photos %}
+				<div class="photo-card">
+					<h3 class="photo-name">{{ photo.getName() }}</h3>
+					<p class="photo-date">Mise en ligne le
+						{{ photo.createdAt|date('d/m/Y') }}</p>
+					<img class="photo-img" src="{{ asset('uploads/photos/' ~ photo.getImagePath()) }}" alt="{{ photo.getName() }}">
+				</div>
+			{% else %}
+				<p>Aucune photo disponible.</p>
+			{% endfor %}
+		</div>
+
+	{% endblock %}
