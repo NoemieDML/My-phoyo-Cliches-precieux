@@ -6,16 +6,45 @@
 			Bienvenue sur votre profil
 			{{ app.user.firstName }}
 		</h1>
+		<p class="photo-count">
+			Vous possédez
+			{{ photos|length }}
+			photo{{ photos|length > 1 ? 's' : '' }}
+		</p>
 
-		<div class="photos-grid">
-			{% for photo in photos %}
-				<div class="photo-card">
-					<h2 class="photo-name">{{ photo.name }}</h2>
-					<p class="photo-date">Ajoutée le
-						{{ photo.createdAt|date('d/m/Y') }}</p>
-					<img class="photo-img" src="{{ asset(photo.imagePath) }}" alt="{{ photo.name }}">
-				</div>
-			{% endfor %}
-		</div>
+		<form id="downloadForm" action="{{ path('profile_photos_download') }}" method="post">
+			<div class="photos-grid">
+				{% for photo in photos %}
+					<div class="photo-card">
+						<h2 class="photo-name">{{ photo.name }}</h2>
+						<p class="photo-date">
+							Mise en ligne le
+							{{ photo.createdAt|date('d/m/Y') }}
+						</p>
+
+						<img
+						class="photo-img" src="{{ asset('uploads/photos/' ~ photo.imagePath) }}" alt="{{ photo.name }}">
+
+						{# Lien pour télécharger une seule image #}
+						<a href="{{ asset('uploads/photos/' ~ photo.imagePath) }}" download="{{ photo.name }}">
+							Télécharger
+						</a>
+					</div>
+				{% else %}
+					<p>Aucune photo disponible.</p>
+				{% endfor %}
+			</div>
+
+		</form>
+
 	</div>
+
+	<script>
+		const form = document.getElementById('downloadForm');
+const msg = document.getElementById('downloadMessage');
+
+form.addEventListener('submit', () => {
+msg.style.display = 'block';
+});
+	</script>
 {% endblock %}

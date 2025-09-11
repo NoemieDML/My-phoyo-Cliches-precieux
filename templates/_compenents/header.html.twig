@@ -15,7 +15,7 @@
 			{# Utilisateur connecté : on affiche le profil et le bouton déconnexion #}
 			<a href="{{ path('app_profile') }}">Mon profil</a>
 			{% if is_granted('ROLE_ADMIN') %}
-				<a href="{{ path('admin_photos_index') }}">Admin Photos</a>
+				<a href="{{ path('admin_users_index') }}">Admin</a>
 			{% endif %}
 			<a href="{{ path('app_logout') }}">Se déconnecter</a>
 		{% else %}

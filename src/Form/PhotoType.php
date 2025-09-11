@@ -44,7 +44,7 @@ class PhotoType extends AbstractType
                 'placeholder' => 'Sélectionnez un utilisateur',
             ])
             ->add('createdAt', DateType::class, [
-                'label'  => 'Date de création',
+                'label'  => 'Date de la prise',
                 'widget' => 'single_text',
                 'input'  => 'datetime',
                 'required' => true,

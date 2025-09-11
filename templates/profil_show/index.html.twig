@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="profile-container">
+		<a href="{{ path('admin_users_index') }}" class="back-button">← Retour à la liste</a>
+
+		<h1 class="profile-title">Profil de
+			{{ user.email }}</h1>
+
+		<div
+			class="profile-main-container">
+			<!-- Infos utilisateur -->
+			<div class="user-info-container">
+				<div class="user-info-item">
+					<strong>Email :</strong>
+					<span class="user-email">{{ user.email }}</span>
+				</div>
+				<div class="user-info-item">
+					<strong>Nom :</strong>
+					<span class="user-firstname">{{ user.firstName }}</span>
+				</div>
+				<div class="user-info-item">
+					<strong>Prénom :</strong>
+					<span class="user-lastname">{{ user.lastName }}</span>
+				</div>
+				<div class="user-info-item">
+					<strong>Numéro de téléphone :</strong>
+					<span class="user-phone">{{ user.phone }}</span>
+				</div>
+				<div class="user-info-item">
+					<strong>Nombre de photos :</strong>
+					<span class="user-photo-count">{{ photos|length }}</span>
+					{{ photos|length > 1 ? 'photos' : 'photo' }}
+				</div>
+			</div>
+
+			<!-- Formulaire ajout photo -->
+			<div class="photo-upload-container">
+				<h2 class="photo-form-title">Ajouter une photo</h2>
+				<form class="photo-upload-form" action="{{ path('admin_users_show', {id: user.id}) }}" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label for="photo_name">Nom de la photo :</label>
+						<input class="input-photo-name" type="text" name="photo_name" id="photo_name" placeholder="Ex: Mariage" required>
+					</div>
+
+					<div class="form-group">
+						<label for="photo_file">Sélectionnez le fichier :</label>
+						<input class="input-photo-file" type="file" name="photo" id="photo_file" required>
+					</div>
+
+					<button class="btn-add-photo" type="submit">Ajouter</button>
+				</form>
+			</div>
+		</div>
+
+
+		{# -------------------- Galerie des photos -------------------- #}
+		<h2>Photos de l'utilisateur</h2>
+		<div class="photos-grid">
+			{% for photo in photos %}
+				<div class="photo-card">
+					<h3 class="photo-name">{{ photo.getName() }}</h3>
+					<p class="photo-date">Mise en ligne le
+						{{ photo.createdAt|date('d/m/Y') }}</p>
+					<img class="photo-img" src="{{ asset('uploads/photos/' ~ photo.getImagePath()) }}" alt="{{ photo.getName() }}">
+					<a href="{{ path('admin_users_show', {id: user.id, delete_photo_id: photo.getId()}) }}" onclick="return confirm('Supprimer cette photo ?')">
+						Supprimer
+					</a>
+				</div>
+			{% else %}
+				<p>Aucune photo disponible.</p>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

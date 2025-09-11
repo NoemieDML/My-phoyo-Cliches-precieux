@@ -2,68 +2,60 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
 use App\Entity\Photo;
-use App\Form\PhotoType;
-use App\Repository\PhotoRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Query\Expr\Join;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Component\HttpFoundation\Request;
 
-#[Route('/admin/photos')]
+#[Route('/admin/users')]
 #[IsGranted('ROLE_ADMIN')]
 class AdminPhotoController extends AbstractController
 {
-    #[Route('/', name: 'admin_photos_index')]
-    public function index(Request $request, PhotoRepository $photoRepository, EntityManagerInterface $em): Response
+    #[Route('/', name: 'admin_users_index')]
+    public function index(EntityManagerInterface $em, Request $request): Response
     {
-        // Récupération de toutes les photos
-        $photos = $photoRepository->findAll();
+        $search = $request->query->get('search', ''); // récupère le terme de recherche
 
-        // Création du formulaire d'ajout de photo
-        $photo = new Photo();
-        $form = $this->createForm(PhotoType::class, $photo);
-        $form->handleRequest($request);
+        $qb = $em->createQueryBuilder()
+            ->select('u, COUNT(p.id) as photoCount')
+            ->from(User::class, 'u')
+            ->leftJoin(Photo::class, 'p', Join::WITH, 'p.user = u');
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // Attribution de l'utilisateur sélectionné dans le formulaire
-            $user = $form->get('user')->getData();
-            $photo->setUser($user);
-
-            // Gestion de l'image uploadée
-            $file = $form->get('image_path')->getData();
-            if ($file) {
-                $filename = uniqid() . '.' . $file->guessExtension();
-                $file->move($this->getParameter('photos_directory'), $filename);
-                $photo->setImagePath($filename);
-            }
-
-            // Date de création
-            $photo->setCreatedAt(new \DateTime());
-
-            $em->persist($photo);
-            $em->flush();
-
-            $this->addFlash('success', 'Photo ajoutée avec succès !');
-
-            return $this->redirectToRoute('admin_photos_index');
+        if ($search) {
+            $qb->where('u.email LIKE :search')
+                ->setParameter('search', '%' . $search . '%');
         }
 
+        $qb->groupBy('u.id');
+
+        $users = $qb->getQuery()->getResult();
+
         return $this->render('admin_photo/index.html.twig', [
-            'photos' => $photos,
-            'form' => $form->createView(), // ✅ Obligatoire : passer un FormView à Twig
+            'users' => $users,
+            'search' => $search, // pour pré-remplir le champ recherche
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'admin_photos_delete')]
-    public function delete(Photo $photo, EntityManagerInterface $em): Response
+    #[Route('/delete/{id}', name: 'admin_users_delete')]
+    public function delete(User $user, EntityManagerInterface $em): Response
     {
-        $em->remove($photo);
+        $em->remove($user);
         $em->flush();
 
-        $this->addFlash('success', 'Photo supprimée avec succès !');
-        return $this->redirectToRoute('admin_photos_index');
+        $this->addFlash('success', 'Utilisateur supprimé avec succès !');
+        return $this->redirectToRoute('admin_users_index');
+    }
+
+    #[Route('/{id}', name: 'admin_users_show')]
+    public function show(User $user): Response
+    {
+        return $this->render('admin_user/show.html.twig', [
+            'user' => $user,
+        ]);
     }
 }
