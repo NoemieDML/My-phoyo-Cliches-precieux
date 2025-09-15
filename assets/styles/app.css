@@ -1,3 +1,5 @@
+/* FONTS */
+
 /* Cookie */
 @font-face {
     font-family: "Cookie";
@@ -14,10 +16,22 @@
     font-style: normal;
 }
 
-.footer .rgpd a:hover {
-    color: #d19a46;
+/* GLOBAL STYLES */
+
+html {
+    margin: 0;
+    padding: 0;
 }
 
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: Montserrat, sans-serif;
+}
+
+/* HEADINGS & TEXT */
 h1 {
     font-family: Cookie, cursive;
     font-weight: lighter;
@@ -27,486 +41,25 @@ p {
     font-family: Montserrat, sans-serif;
 }
 
+/* LINKS */
 a {
     font-family: Montserrat, sans-serif;
-}
-
-html {
-    margin: 0;
-}
-
-body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-}
-
-.header {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f6f6f6;
-    padding-inline: 16px;
-    padding-block: 4px;
-}
-
-nav {
-    display: flex;
-    gap: 27px;
-}
-
-a {
-    color: black;
     text-decoration: none;
+    color: inherit;
 }
 
-.titre-logo {
-    color: rgb(0, 0, 0);
-    font-size: "InriaSerif";
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 27px;
-    font-size: 30px;
-    margin: 0;
+a:hover {
+    color: #d19a46;
 }
 
-.logo {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border: solid 1px #eabc87;
-    width: 50px;
-}
-
-.img-index {
-    background-image: url(../images/header.jpg);
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: #ffffff;
-}
-
-.img-index h1 {
-    margin-top: 0px;
-    font-size: 60px;
-}
-
-.img-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.link-index {
-    font-family: sans-serif;
-    font-size: 25px;
-    color: #000000;
-    background-color: #febfb6;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-.img-index hr {
-    border: none;
-    width: 20%;
-    border-top: 2px solid #ffffff;
-    margin-bottom: 30px;
-}
-
-.icon-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-top: 50px;
-}
-
-.icon-index img {
-    width: 50px;
-}
-
-.mariage-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-left: 20px;
-}
-
-.mariage-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.mariage-index img {
-    width: 600px;
-}
-
-.btn-mariage {
-    padding: 10px 20px;
-    font-size: 15px;
-    transition: background-color 0.5s;
-    background-color: #fff0;
-    color: rgb(0 0 0);
-    font-weight: bold;
-    font-family: sans-serif;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: rgb(208 151 45);
-    border-width: 2px;
-}
-
-.mariage-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.mariage-index img {
-    width: 600px;
-}
-
-.container-mariage {
-    margin-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f4f2;
-    border-radius: 20px;
-}
-
-.sec-mariage {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.info-mariage h1 {
-    max-width: 350px;
-    margin-left: 50px;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.info-mariage p {
-    margin-right: 10px;
-    font-family: sans-serif;
-    max-width: 350px;
-    margin-left: 50px;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.info-mariage-img img {
-    width: 200px;
-}
-
-.portraits-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7eef0;
-    margin-top: 50px;
-    gap: 50px;
-}
-
-.portraits-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.portraits-index img {
-    width: 600px;
-}
-
-.btn-portraits {
-    padding: 10px 20px;
-    font-size: 15px;
-    transition: background-color 0.5s;
-    background-color: #fff0;
-    color: rgb(0 0 0);
-    font-weight: bold;
-    font-family: sans-serif;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: rgb(208 151 45);
-    border-width: 2px;
-}
-
-.portraits-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.portraits-index img {
-    width: 600px;
-}
-
-.maternité {
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-left: 20px;
-}
-
-.maternité {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.maternité p {
-    font-family: sans-serif;
-}
-
-.btn-maternité {
-    padding: 10px 20px;
-    font-size: 15px;
-    transition: background-color 0.5s;
-    background-color: #fff0;
-    color: rgb(0 0 0);
-    font-weight: bold;
-    font-family: sans-serif;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: rgb(208 151 45);
-    border-width: 2px;
-}
-
-.grossesse {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    border-radius: 20px;
-}
-
-.info-grossesse {
-    margin-left: 20px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #f8e9e7;
-    box-shadow: 0 0 15px -3px rgb(107 107 107 / 0.38);
-    width: 450px;
-    padding: 20px;
-}
-
-.info-grossesse p {
-    font-family: sans-serif;
-    line-height: 25px;
-}
-
-.img-grossesse img {
-    width: 400px;
-    transform: rotate(-5deg);
-}
-
-.bebe {
-    gap: 30px;
-    margin-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-}
-
-.info-bebe {
-    margin-left: 20px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #f8e9e7;
-    box-shadow: 0 0 15px -3px rgb(107 107 107 / 0.38);
-    width: 450px;
-    height: 600;
-    padding: 20px;
-}
-
-.info-bebe p {
-    font-family: sans-serif;
-    line-height: 25px;
-}
-
-.img-bebe img {
-    width: 400px;
-    transform: rotate(5deg);
-}
-
-.evenement-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7eef0;
-    height: 400px;
-    margin-top: 50px;
-    gap: 50px;
-}
-
-.evenement1 {
-    margin-left: 40px;
-    margin-right: 10px;
-}
-
-.evenement2 {
-    margin-left: 10px;
-    margin-right: 40px;
-}
-
-.evenement-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.evenement-index img {
-    width: 450px;
-}
-
-.btn-evenement {
-    padding: 10px 20px;
-    font-size: 15px;
-    transition: background-color 0.5s;
-    background-color: #fff0;
-    color: rgb(0 0 0);
-    font-weight: bold;
-    font-family: sans-serif;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: rgb(208 151 45);
-    border-width: 2px;
-}
-
-.qui-suis-je-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-left: 100px;
-}
-
-.qui-suis-je-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto;
-    text-align: left;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.qui-suis-je-index img {
-    width: 600px;
-    margin-right: 80px;
-}
-
-.qui-suis-je-index h1 {
-    font-size: 30px;
-}
-
-.qui-suis-je-index img {
-    width: 600px;
-}
-
-.sec-rdv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7eef0;
-    height: 400px;
-    margin-top: 50px;
-    gap: 50px;
-}
-
-.rdv-intervention {
-    margin-left: 20px;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #f8e9e7;
-    box-shadow: 0 0 15px -3px rgb(107 107 107 / 0.38);
-    max-width: 500px;
-    max-height: 200px;
-    padding: 20px;
-}
-
-.rdv-intervention li {
-    font-family: Cookie, cursive;
-    font-weight: lighter;
-    font-size: 19px;
-}
-
-.rdv-intervention ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-.col1-index {
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-    margin-right: 20px;
-}
-
-.col2-index {
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-    margin-right: 20px;
-}
-
-.col3-index {
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-    margin-right: 20px;
-}
-
-.rdv-intervention img {
-    width: 25px;
-    margin-right: 10px;
-}
-
+/* FOOTER */
 .footer {
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-color: #f9f9f9;
-    padding: 15px 15px;
+    padding: 15px;
     text-align: center;
-    display: flex;
-    justify-content: center;
     font-family: "Arial", sans-serif;
     color: #333;
 }
@@ -516,7 +69,7 @@ a {
     margin-right: 20px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    border: solid 1px #eabc87;
+    border: 1px solid #eabc87;
 }
 
 .container-col {
@@ -525,12 +78,12 @@ a {
 }
 
 .footer .col1-footer {
-    margin-top: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    margin-top: 20px;
 }
 
 .footer .col1-footer a {
@@ -550,14 +103,17 @@ a {
     margin-bottom: 20px;
 }
 
+.footer .reseau {
+    display: flex;
+    align-items: center;
+}
+
 .footer .reseau img {
     width: 28px;
     height: 28px;
-    transition: transform 0.3s ease;
     margin-top: 20px;
     margin-inline: 10px;
-    align-items: center;
-    display: flex;
+    transition: transform 0.3s ease;
 }
 
 .footer .reseau img:hover {
@@ -572,6 +128,11 @@ a {
     font-size: 14px;
 }
 
+.footer .rgpd a {
+    text-decoration: none;
+    color: #444;
+}
+
 .footer hr {
     border: none;
     width: 80%;
@@ -579,10 +140,480 @@ a {
     margin-top: 20px;
 }
 
-.footer .rgpd a {
-    text-decoration: none;
-    color: #444;
+/*HEADER */
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f6f6;
+    padding-inline: 16px;
+    padding-block: 4px;
 }
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .menu li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: #d19a46;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    display: block;
+}
+
+/* NAVIGATION LINKS */
+nav {
+    display: flex;
+    gap: 27px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.titre-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 27px;
+    font-family: "InriaSerif", serif;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+.logo {
+    width: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #eabc87;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+
+/* HOME et INFO SEANCE Mariage */
+
+/* IMAGE HEADER INDEX */
+.img-index {
+    background-image: url(../images/header.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.img-index h1 {
+    margin-top: 0;
+    font-size: 60px;
+}
+
+.img-index p {
+    font-family: sans-serif;
+    max-width: 630px;
+    margin: 0 auto 16px auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.img-index hr {
+    border: none;
+    width: 20%;
+    border-top: 2px solid #ffffff;
+    margin-bottom: 30px;
+}
+
+.link-index {
+    font-family: sans-serif;
+    font-size: 25px;
+    color: #000000;
+    background-color: #febfb6;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* ICON SECTION */
+.icon-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.icon-index img {
+    width: 50px;
+}
+
+/* MARIAGE SECTION */
+.mariage-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-left: 20px;
+}
+
+.mariage-index img {
+    width: 600px;
+}
+
+.mariage-index p {
+    font-family: sans-serif;
+    max-width: 630px;
+    margin: 0 auto 16px auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.btn-mariage {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: 2px solid rgb(208, 151, 45);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+/* CONTAINERS & SECTIONS */
+.container-mariage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    background-color: #f5f4f2;
+    border-radius: 20px;
+}
+
+.sec-mariage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.info-mariage {
+    margin-left: 50px;
+    max-width: 350px;
+}
+
+.info-mariage h1 {
+    margin-bottom: 16px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.info-mariage p {
+    margin-bottom: 16px;
+    margin-right: 10px;
+    font-family: sans-serif;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.info-mariage-img img {
+    width: 200px;
+}
+
+/* HOME INFO SEANCE PORTRAITS */
+
+.portraits-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    background-color: #f7eef0;
+}
+
+.portraits-index img {
+    width: 600px;
+}
+
+.portraits-index p {
+    font-family: sans-serif;
+    max-width: 630px;
+    margin: 0 auto 16px auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.btn-portraits {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: 2px solid rgb(208, 151, 45);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+/* HOME INFO SEANCE MATERNITE GROSSESSE ETC */
+
+.maternité {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-left: 20px;
+    max-width: 1000px;
+    margin: 0 auto 16px auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.maternité p {
+    font-family: sans-serif;
+}
+
+.btn-maternité {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: 2px solid rgb(208, 151, 45);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+.grossesse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.info-grossesse,
+.info-bebe {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #f8e9e7;
+    box-shadow: 0 0 15px -3px rgba(107, 107, 107, 0.38);
+    width: 450px;
+    padding: 20px;
+}
+
+.info-grossesse p,
+.info-bebe p {
+    font-family: sans-serif;
+    line-height: 25px;
+}
+
+.img-grossesse img,
+.img-bebe img {
+    width: 400px;
+    transform: rotate(-5deg);
+}
+
+.bebe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-left: 20px;
+    border-radius: 20px;
+}
+
+/* HOME INFO SEANCE evenement */
+
+.evenement-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 400px;
+    margin-top: 50px;
+    background-color: #f7eef0;
+}
+
+.evenement1 {
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+.evenement2 {
+    margin-left: 10px;
+    margin-right: 40px;
+}
+
+.evenement-index img {
+    width: 450px;
+}
+
+.evenement-index p {
+    font-family: sans-serif;
+    max-width: 630px;
+    margin: 0 auto 16px auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.btn-evenement {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: 2px solid rgb(208, 151, 45);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+/* HOME QUI-SUIS-JE */
+
+.qui-suis-je-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-left: 100px;
+}
+
+.qui-suis-je-index img {
+    width: 600px;
+    margin-right: 80px;
+}
+
+.qui-suis-je-index h1 {
+    font-size: 30px;
+}
+
+.qui-suis-je-index p {
+    font-family: sans-serif;
+    max-width: 630px;
+    margin: 0 auto 16px auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* HOME RDV */
+
+.sec-rdv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 400px;
+    margin-top: 50px;
+    background-color: #f7eef0;
+}
+
+.rdv-intervention {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    background-color: #f8e9e7;
+    box-shadow: 0 0 15px -3px rgba(107, 107, 107, 0.38);
+    max-width: 500px;
+    max-height: 300px;
+    padding: 20px;
+}
+
+.rdv-intervention ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.rdv-intervention li {
+    font-family: Cookie, cursive;
+    font-weight: lighter;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.rdv-intervention img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.col1-index,
+.col2-index,
+.col3-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin-right: 20px;
+}
+
+/* RGPD */
 
 .RGPD {
     background-color: #f7eef0;
@@ -596,6 +627,8 @@ a {
     font-size: 50px;
 }
 
+/* CONTACT FORMULAIRE INSCRIPTION CONNEXION*/
+
 .titre-contact {
     text-align: center;
 }
@@ -604,11 +637,7 @@ a {
     font-size: 50px;
 }
 
-.form-nom-prenom {
-    display: flex;
-    justify-content: center;
-}
-
+.form-nom-prenom,
 .form-email-phone {
     display: flex;
     justify-content: center;
@@ -632,6 +661,8 @@ textarea {
 }
 
 .form-container-register {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     width: 400px;
     margin: 30px auto;
@@ -640,28 +671,28 @@ textarea {
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
 .form-container {
-    align-items: left;
+    display: flex;
+    flex-direction: left;
+    align-items: flex-start;
     width: 400px;
     padding: 25px;
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-right: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 50px 20px 0;
 }
 
 .map {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin: 0 50px;
 }
 
 #map {
-    height: 200px; /* taille de la carte */
+    height: 200px;
     width: 30%;
     border-radius: 16px;
 }
@@ -690,8 +721,8 @@ textarea {
 .icon-input .icon {
     position: absolute;
     top: 50%;
-    margin-top: 7px;
     left: 12px;
+    margin-top: 7px;
     transform: translateY(-50%);
     font-size: 18px;
     color: #f5bab1;
@@ -732,6 +763,8 @@ textarea {
     font-size: 14px;
     color: #444;
 }
+
+/* profile */
 
 .profile-container {
     max-width: 1200px;
