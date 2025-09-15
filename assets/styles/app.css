@@ -631,7 +631,7 @@ textarea {
     margin-top: 20px;
 }
 
-.form-container {
+.form-container-register {
     align-items: center;
     width: 400px;
     margin: 30px auto;
@@ -639,6 +639,31 @@ textarea {
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.form-container {
+    align-items: left;
+    width: 400px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#map {
+    height: 200px; /* taille de la carte */
+    width: 30%;
+    border-radius: 16px;
 }
 
 .form-title {
@@ -1099,56 +1124,79 @@ textarea {
     }
 }
 
-/* page contact admin */
-
+/* Titre principal */
 .title {
     text-align: center;
-    font-family: Arial, sans-serif;
-    margin: 20px 0;
+    color: #d19a46;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-/* Container flexible pour les cartes */
+/* Container des cartes */
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* limite la largeur pour rester centré */
+    margin: 0 auto; /* centre le container */
+    justify-items: center; /* centre les cartes */
 }
 
-/* Style des cartes */
+/* Carte contact */
 .contact-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 15px;
-    width: 300px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    font-family: Arial, sans-serif;
+    background-color: white;
+    border: 2px solid #eabc87;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 350px;
 }
 
 .contact-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Différencier les messages lus et non lus */
-.unseen {
-    border-left: 5px solid #ffc107; /* jaune pour non lu */
+/* Statut vu / non vu */
+.contact-card.seen {
+    border-left: 8px solid #eabc87;
+    opacity: 0.8;
 }
 
-.seen {
-    border-left: 5px solid #28a745; /* vert pour lu */
+.contact-card.unseen {
+    border-left: 8px solid #febfb6;
+    background-color: #fff8f7;
 }
 
-/* Texte des dates */
+/* Titres */
+.contact-card h2 {
+    margin-top: 0;
+    color: #d19a46;
+}
+
+/* Date */
 .date {
-    font-size: 0.85em;
-    color: #555;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
 }
 
-/* Responsive : les cartes prennent toute la largeur sur petit écran */
-@media (max-width: 768px) {
-    .contact-card {
-        width: 90%;
-    }
+/* Bouton supprimer */
+.delete-btn {
+    margin-top: 10px;
+    background-color: #febfb6;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #e89fa0;
 }

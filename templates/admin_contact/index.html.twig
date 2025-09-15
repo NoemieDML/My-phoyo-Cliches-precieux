@@ -3,7 +3,7 @@
 
 {% block body %}
 	<h1 class="title">Messages du formulaire de contact</h1>
-
+	<a href="{{ path('app_admin') }}" class="back-button">← Retour à la page admin</a>
 	<div class="cards-container">
 		{% for contact in contacts %}
 			<div class="contact-card {{ contact.isSeen ? 'seen' : 'unseen' }}">

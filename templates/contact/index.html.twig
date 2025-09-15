@@ -1,65 +1,68 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div class="form-container">
-		<h1 class="form-title">Contactez My Photo à Beuvry</h1>
-		<p class="form-subtitle">
-			Vous avez des questions ou des besoins particuliers ?<br>
-			Laissez-moi un message dans ce formulaire de contact.<br>
-			Je vous répondrai dans les plus brefs délais.
-		</p>
 
-		<section class="form-contact">
-			{{ form_start(form, { 'attr': {'class': 'contact-form'} }) }}
+	<div class="map">
+		<div class="form-container">
 
-			<div class="form-group icon-input">
-				<span class="icon">👤</span>
-				{{ form_widget(form.firstName, {'attr': {'placeholder': 'Prénom', 'class': 'form-input'}}) }}
-			</div>
+			<h1 class="form-title">Contactez My Photo à Beuvry</h1>
+			<p class="form-subtitle">
+				Vous avez des questions ou des besoins particuliers ?<br>
+				Laissez-moi un message dans ce formulaire de contact.<br>
+				Je vous répondrai dans les plus brefs délais.
+			</p>
 
-			<div class="form-group icon-input">
-				<span class="icon">👤</span>
-				{{ form_widget(form.lastName, {'attr': {'placeholder': 'Nom', 'class': 'form-input'}}) }}
-			</div>
+			<section class="form-contact">
+				{{ form_start(form, { 'attr': {'class': 'contact-form'} }) }}
+
+				<div class="form-group icon-input">
+					<span class="icon">👤</span>
+					{{ form_widget(form.firstName, {'attr': {'placeholder': 'Prénom', 'class': 'form-input'}}) }}
+				</div>
+
+				<div class="form-group icon-input">
+					<span class="icon">👤</span>
+					{{ form_widget(form.lastName, {'attr': {'placeholder': 'Nom', 'class': 'form-input'}}) }}
+				</div>
 
 
-			<div class="form-group icon-input">
-				<span class="icon">✉️</span>
-				{{ form_widget(form.email, {'attr': {'placeholder': 'Adresse e-mail', 'class': 'form-input'}}) }}
-			</div>
+				<div class="form-group icon-input">
+					<span class="icon">✉️</span>
+					{{ form_widget(form.email, {'attr': {'placeholder': 'Adresse e-mail', 'class': 'form-input'}}) }}
+				</div>
 
-			<div class="form-group icon-input">
-				<span class="icon">📞</span>
-				{{ form_widget(form.phone, {'attr': {'placeholder': 'Numéro de téléphone', 'class': 'form-input'}}) }}
-			</div>
+				<div class="form-group icon-input">
+					<span class="icon">📞</span>
+					{{ form_widget(form.phone, {'attr': {'placeholder': 'Numéro de téléphone', 'class': 'form-input'}}) }}
+				</div>
 
-			<div class="form-group icon-input">
-				<span class="icon">📅</span>
-				{{ form_widget(form.publichedAt, {'attr': {'placeholder': 'Date', 'class': 'form-input'}}) }}
-			</div>
+				<div class="form-group icon-input">
+					<span class="icon">📅</span>
+					{{ form_widget(form.publichedAt, {'attr': {'placeholder': 'Date', 'class': 'form-input'}}) }}
+				</div>
 
-			<div class="form-group icon-input">
-				<span class="icon">📝</span>
-				{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet', 'class': 'form-input'}}) }}
-			</div>
+				<div class="form-group icon-input">
+					<span class="icon">📝</span>
+					{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet', 'class': 'form-input'}}) }}
+				</div>
 
-			<div class="form-group icon-input">
-				<span class="icon">💬</span>
-				{{ form_widget(form.content, {'attr': {'placeholder': 'Votre message...', 'class': 'form-input'}}) }}
-			</div>
+				<div class="form-group icon-input">
+					<span class="icon">💬</span>
+					{{ form_widget(form.content, {'attr': {'placeholder': 'Votre message...', 'class': 'form-input'}}) }}
+				</div>
 
-			<div class="form-submit">
-				<button type="submit" class="btn-submit">Envoyer</button>
-			</div>
+				<div class="form-submit">
+					<button type="submit" class="btn-submit">Envoyer</button>
+				</div>
 
-			{{ form_end(form) }}
-		</section>
+				{{ form_end(form) }}
+			</section>
+
+		</div>
+
+		<div id="map"></div>
+		<!-- Script Leaflet -->
+		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 	</div>
-
-	<h2>Ma carte Leaflet</h2>
-	<div id="map"></div>
-
-	<!-- Script Leaflet -->
-	<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 {% endblock %}

@@ -1,3 +1,156 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}{% endblock %}
+{% block body %}
+
+	<div class="mariage-index">
+		<div class="mariage">
+			<h1>Découvrez les différentes séances proposées</h1>
+			<p>Immortalisez vos plus beaux instants avec des clichés uniques et authentiques. Mariage, naissance, grossesse, anniversaire, portraits, ou encore photos scolaires et de crèche : je capture chaque moment avec émotion et créativité
+			</p>
+		</div>
+		<div class="mariage">
+			<img src="{{ asset('images/Séances photos de cérémonies familiales à Beuvry.webp') }}" alt="cérémonies familiales">
+		</div>
+	</div>
+
+	<div class="portraits-index" id="événementielle">
+
+		<div class="portraits">
+			<img src="{{ asset('images/Photographe événementiel à Beuvry.webp') }}" alt="photo portraits">
+		</div>
+		<div class="portraits">
+			<h1>Photographe événementiel
+			</h1>
+			<p>Je vous accompagne pour capturer les moments forts de votre événement, qu’il soit familial ou professionnel, à Beuvry et ses environs. Ma démarche est de saisir avec authenticité et sensibilité les ambiances, les émotions et les détails qui font la singularité de chaque occasion spéciale. Grâce à une approche discrète, je crée des images qui racontent votre histoire avec justesse.</p>
+
+		</div>
+	</div>
+
+	<div class="mariage-index" id="Maternité">
+		<div class="mariage">
+			<h1>Photographe de maternité</h1>
+			<p>Immortaliser les premières étapes de la vie est une manière de préserver des souvenirs précieux. En tant que photographe de maternité près de Béthune, je vous accompagne pour capturer les instants forts de votre grossesse, de la naissance de votre bébé et de ses premières années.
+			</p>
+		</div>
+		<div class="mariage">
+			<img src="{{ asset('images/Séance photo de grossesse à Beuvry.webp') }}" alt="photo de grossesse ">
+		</div>
+	</div>
+	<section class="sec-mariage">
+		<div class="container-mariage">
+
+			<div class="info-mariage-img">
+				<img src="{{ asset('images\Un shooting de femme enceinte dans un bain de lait près de Béthune.webp') }}" alt="femme enceinte dans un bain de lait">
+			</div>
+
+			<div class="info-mariage">
+				<h1>Un shooting de femme enceinte dans un bain de lait
+				</h1>
+				<p>Installée dans une baignoire décorée de fleurs, vous profitez d’un moment de détente tout en posant dans une ambiance douce. Ce style de photo met en avant la féminité et la tendresse du lien avec votre futur bébé.</p>
+			</div>
+
+		</div>
+
+		<div class="container-mariage">
+
+			<div class="info-mariage-img">
+				<img src="{{ asset('images/Une séance en famille pour célébrer l’attente près de Béthune.webp') }}" alt="séance en famille">
+			</div>
+
+			<div class="info-mariage">
+				<h1>Une séance en famille pour célébrer l’attente</h1>
+				<p>Partager un shooting de grossesse avec votre partenaire et vos enfants est une belle manière d’illustrer l’amour qui entoure l’arrivée du bébé. En tant que photographe, je capture les instants complices, les gestes tendres, les éclats de rire et les regards remplis d’émotion.</p>
+			</div>
+
+		</div>
+	</section>
+
+	<div class="portraits-index" id="Portraits">
+
+		<div class="portraits">
+			<img src="{{ asset('images/Shooting en couple à Beuvry.webp') }}" alt="photo portraits">
+		</div>
+		<div class="portraits">
+			<h1>Portraits photographiques</h1>
+			<p>Située à Beuvry, je réalise des portraits adaptés à toutes vos envies, en studio ou en extérieur. Que ce soit pour une photo en solo, en couple, en famille ou même avec votre animal de compagnie, chaque séance est personnalisée pour refléter votre personnalité. Mon approche est simple et bienveillante, afin de capturer des images naturelles et expressives.</p>
+		</div>
+	</div>
+
+	<div class="maternité">
+		<h1>Shooting de nouveau-né</h1>
+		<p>Une séance photo de nouveau-né permet de figer ces instants avec douceur et sensibilité. Réalisés idéalement dans les 21 premiers jours, les shootings peuvent se faire en studio, à domicile ou même en extérieur si le temps le permet.</p>
+	</div>
+
+	<div class="grossesse">
+		<div class="img-grossesse">
+			<img src="{{ asset('images/Séance photo de naissance dans les premières semaines près de Béthune.webp') }}" alt="photo portraits">
+		</div>
+		<div class="info-grossesse">
+			<h1>Séance photo de naissance dans les premières semaines</h1>
+			<p>Les shootings de naissance sont proposés entre la naissance et la troisième semaine. Le décor est soigneusement installé, avec des matières douces et des poses naturelles. Je fixe un rendez-vous quelques jours avant la date prévue, afin d’être prête à capturer les premiers instants.</p>
+		</div>
+	</div>
+
+	<div class="bebe">
+		<div class="info-bebe">
+			<h1>Un shooting de bébé dans un bain de lait</h1>
+			<p>Pour obtenir des clichés originaux, je propose un shooting de bébé dans un bain de lait, agrémenté de fleurs ou de fruits délicats. Ce décor apaisant met en valeur la douceur de la peau et les premières expressions de votre tout-petit.</p>
+		</div>
+		<div class="img-bebe">
+			<img src="{{ asset('images/Un shooting de bébé dans un bain de lait près de Béthune.webp') }}" alt="photo portraits">
+		</div>
+	</div>
+
+	<div class="grossesse">
+		<div class="img-grossesse">
+			<img src="{{ asset('images/Shootings d’anniversaires de bébés près de Béthune-.webp') }}" alt="photo portraits">
+		</div>
+		<div class="info-grossesse">
+			<h1>Shootings d’anniversaires de bébés
+			</h1>
+			<p>Réalisés en studio, mes shootings d’anniversaires de bébés se déclinent en trois formules pour s’adapter à vos envies : une mise en scène simple avec un joli décor, une version plus festive avec un gâteau créatif ou une expérience complète associant décoration, gâteau et bain de lait. De 1 à 5 ans, c’est l’occasion parfaite de capturer de beaux souvenirs de votre petit, dans un univers ludique et coloré.</p>
+		</div>
+	</div>
+
+	<div class="evenement-index">
+
+
+		<div class="evenement2" id="mariage">
+			<h1>Photographe de mariages</h1>
+			<p>Je vous accompagne pour immortaliser chaque moment important de votre mariage près de Béthune, avec une approche flexible et adaptée à vos envies. Que vous souhaitiez une couverture complète ou seulement des temps forts comme la cérémonie ou le vin d’honneur, je vous propose des formules modulables pour répondre à vos besoins.
+			</p>
+		</div>
+		<div class="evenement">
+			<img src="{{ asset('images/Photographe de mariages près de Béthune.webp') }}" alt="photo portraits">
+		</div>
+	</div>
+
+	<div class="mariage-index" id="Scolaire-Crèche">
+		<div class="mariage">
+			<img src="{{ asset('images/Spécialiste de photographie scolaire à Beuvry.webp') }}" alt="photographie scolaire">
+		</div>
+		<div class="mariage">
+			<h1>Spécialiste de photographie scolaire</h1>
+			<p>Je suis au service des écoles et des établissements de la petite enfance à Beuvry et ses environs pour la réalisation de photographie scolaire. À chaque intervention, je veille à créer un cadre rassurant et convivial pour mettre les enfants à l’aise et capturer des portraits authentiques. Je vous garantis des images de qualité, livrées rapidement et dans le respect des attentes des établissements comme des familles.</p>
+		</div>
+	</div>
+
+	<div class="maternité">
+		<h1>Réalisation de photos en crèche</h1>
+		<p>Photographier les tout-petits demande une approche douce et patiente, adaptée aux besoins des enfants et de leurs parents. Je propose des séances photos en crèche qui valorisent la spontanéité et la complicité avec les éducateurs.
+		</p>
+	</div>
+
+	<div class="grossesse">
+		<div class="img-grossesse">
+			<img src="{{ asset('images/Réalisation de photos en crèche à Beuvry.webp') }}" alt="photo portraits">
+		</div>
+		<div class="info-grossesse">
+			<h1>Réalisation de photos en crèche</h1>
+			<p>Chaque prise de vue est réalisée dans un cadre rassurant, avec une attention particulière à la sécurité et au bien-être des enfants. J’adopte des méthodes douces pour encourager la participation naturelle des plus jeunes. Le temps de la séance est flexible pour respecter le rythme de chaque enfant.
+			</p>
+		</div>
+	</div>
+
+
+{% endblock %}

@@ -7,17 +7,18 @@ import "./bootstrap.js";
  */
 import "./styles/app.css";
 
-console.log("This log comes from assets/app.js - welcome to AssetMapper! 🎉");
+document.addEventListener("DOMContentLoaded", function () {
+    var latitude = 50.52061107649332;
+    var longitude = 2.6783712245611895;
 
-// Initialiser la carte et centrer sur Paris
-var map = L.map("map").setView([50.52055821051865, 2.6783900000000003], 13);
+    var map = L.map("map").setView([latitude, longitude], 15);
 
-// Ajouter le fond de carte (OpenStreetMap)
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-        '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributeurs',
-}).addTo(map);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+    }).addTo(map);
 
-// Ajouter un marker simple
-var marker = L.marker([48.8566, 2.3522]).addTo(map);
-marker.bindPopup("<b>Paris</b><br>C'est ici !").openPopup();
+    L.marker([latitude, longitude])
+        .addTo(map)
+        .bindPopup("88 Rue Sadi Carnot, Beuvry")
+        .openPopup();
+});
