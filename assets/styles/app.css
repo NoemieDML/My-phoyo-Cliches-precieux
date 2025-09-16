@@ -209,7 +209,6 @@ a {
     justify-content: space-between;
     align-items: center;
     gap: 27px;
-    font-family: "InriaSerif", serif;
     font-size: 30px;
     color: rgb(0, 0, 0);
     margin: 0;
@@ -412,7 +411,6 @@ a {
 /* HOME INFO SEANCE MATERNITE GROSSESSE ETC */
 
 .maternité {
-    display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
@@ -673,8 +671,6 @@ textarea {
 }
 
 .form-container {
-    display: flex;
-    flex-direction: left;
     align-items: flex-start;
     width: 400px;
     padding: 25px;

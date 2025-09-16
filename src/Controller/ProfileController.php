@@ -23,11 +23,11 @@ class ProfileController extends AbstractController
         ]);
     }
 
-    // Téléchargement d'une photo
+    // Téléchargement d'une photo depuis l'espace client
     #[Route('/profile/download', name: 'profile_photos_download', methods: ['POST'])]
     public function download(Request $request, PhotoRepository $photoRepository): Response
     {
-        $token = $request->request->get('_token'); // CSRF token (sert à protéger le formulaire contre les attaques)
+        $token = $request->request->get('_token'); // CSRF token pour protéger le formulaire
         $photoId = $request->request->get('photo_id'); // ID de la photo à télécharger
 
         // Vérifie le token et l'ID
@@ -38,7 +38,7 @@ class ProfileController extends AbstractController
 
         $photo = $photoRepository->find($photoId); // Cherche la photo en base
 
-        if (!$photo) { // Si photo introuvable
+        if (!$photo) { // Si la photo n'existe pas
             $this->addFlash('error', 'Photo introuvable.');
             return $this->redirectToRoute('app_profile');
         }
