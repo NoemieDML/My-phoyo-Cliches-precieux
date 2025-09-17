@@ -853,6 +853,8 @@ textarea {
     background-color: #c65a5a;
 }
 
+/* Formulaire */
+
 .form-section {
     flex: 1;
     min-width: 320px;
@@ -894,7 +896,12 @@ textarea {
     transition: background-color 0.2s ease;
 }
 
-/* Liste des photos */
+.form-section button:hover {
+    background-color: #eaa89d;
+}
+
+/* Liste des photos Admin */
+
 .list-section {
     flex: 2;
     min-width: 300px;
@@ -920,7 +927,8 @@ textarea {
     margin-bottom: 12px;
     border-radius: 8px;
     background-color: #f9f9f9;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+        background-color 0.2s ease;
 }
 
 .list-section li:hover {
@@ -949,8 +957,8 @@ textarea {
     border-radius: 6px;
     padding: 6px 12px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
     font-size: 13px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .list-section li form button:hover {
@@ -958,7 +966,8 @@ textarea {
     transform: translateY(-1px);
 }
 
-/* page admin */
+/* Admin */
+
 .admin-container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
@@ -992,72 +1001,8 @@ textarea {
     border: none;
     background-color: #3498db;
     color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.search-form button:hover {
-    background-color: #2980b9;
-}
-
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.admin-table thead {
-    background-color: #f7b9af;
-    color: white;
-}
-
-.admin-table th,
-.admin-table td {
-    padding: 12px 15px;
-    text-align: left;
-}
-
-.admin-table tbody tr {
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s;
-}
-
-.admin-table tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-.btn {
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    color: white;
-    font-size: 0.9em;
-    margin-right: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn-show {
-    background-color: #e17c3d;
-}
-
-.btn-show:hover {
-    background-color: #ba5f27;
-}
-
-.btn-delete {
-    background-color: #e74c3c;
-}
-
-.btn-delete:hover {
-    background-color: #c0392b;
-}
-
-/* Page Show */
-
-/* Conteneur principal : flex pour user-info et formulaire */
 .profile-main-container {
     display: flex;
     gap: 30px;
@@ -1065,9 +1010,8 @@ textarea {
     margin-bottom: 30px;
 }
 
-/* Bloc infos utilisateur */
 .user-info-container {
-    flex: 1; /* prend l’espace disponible */
+    flex: 1;
     min-width: 250px;
     background-color: #f9f9f9;
     padding: 15px;
@@ -1075,7 +1019,6 @@ textarea {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Chaque ligne d’info */
 .user-info-item {
     margin: 8px 0;
     font-size: 1em;
@@ -1125,6 +1068,7 @@ textarea {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .btn-add-photo:hover {
@@ -1142,15 +1086,9 @@ textarea {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 .back-button:hover {
     background-color: #333;
-}
-
-/* Responsive pour petits écrans */
-@media (max-width: 768px) {
-    .profile-main-container {
-        flex-direction: column;
-    }
 }
 
 /* Titre principal */
@@ -1167,9 +1105,9 @@ textarea {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 30px;
     width: 100%;
-    max-width: 1200px; /* limite la largeur pour rester centré */
-    margin: 0 auto; /* centre le container */
-    justify-items: center; /* centre les cartes */
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 /* Carte contact */
@@ -1179,7 +1117,7 @@ textarea {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 100%;
     max-width: 350px;
 }
@@ -1187,17 +1125,6 @@ textarea {
 .contact-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Statut vu / non vu */
-.contact-card.seen {
-    border-left: 8px solid #eabc87;
-    opacity: 0.8;
-}
-
-.contact-card.unseen {
-    border-left: 8px solid #febfb6;
-    background-color: #fff8f7;
 }
 
 /* Titres */
@@ -1223,7 +1150,7 @@ textarea {
     color: #333;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .delete-btn:hover {
