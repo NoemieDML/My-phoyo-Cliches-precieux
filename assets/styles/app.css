@@ -478,6 +478,9 @@ a {
 /* HOME INFO SEANCE MATERNITE GROSSESSE ETC */
 
 .maternité {
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
     justify-content: center;
     align-items: center;
     gap: 50px;
