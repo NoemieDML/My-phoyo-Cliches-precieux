@@ -24,7 +24,6 @@ html {
 }
 
 body {
-    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -54,13 +53,22 @@ a:hover {
 
 /* FOOTER */
 .footer {
+    @media (width > 700px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding-inline: 16px;
+        padding-block: 4px;
+    }
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f9f9f9;
     padding: 15px;
     text-align: center;
-    font-family: "Arial", sans-serif;
     color: #333;
 }
 
@@ -104,14 +112,18 @@ a:hover {
 }
 
 .footer .reseau {
-    display: flex;
+    @media (width > 700px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    display: grid;
     align-items: center;
 }
 
 .footer .reseau img {
     width: 28px;
     height: 28px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-inline: 10px;
     transition: transform 0.3s ease;
 }
@@ -140,15 +152,29 @@ a:hover {
     margin-top: 20px;
 }
 
+.sf-toolbar-clearer {
+    clear: both;
+    height: 0px;
+}
+
 /*HEADER */
 .header {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
     align-items: center;
     background-color: #f6f6f6;
-    padding-inline: 16px;
-    padding-block: 4px;
+    position: relative;
+}
+
+@media (min-width: 700px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding-inline: 16px;
+        padding-block: 4px;
+    }
 }
 
 /* NAVBAR */
@@ -179,7 +205,7 @@ a:hover {
 }
 
 /* HAMBURGER */
-.hamburger {
+/* .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -191,11 +217,16 @@ a:hover {
     height: 3px;
     background: white;
     display: block;
-}
+} */
 
 /* NAVIGATION LINKS */
 nav {
+    @media (width > 700px) {
+        display: grid;
+        gap: 27px;
+    }
     display: flex;
+    flex-wrap: wrap;
     gap: 27px;
 }
 
@@ -205,13 +236,18 @@ a {
 }
 
 .titre-logo {
+    @media (width > 700px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 27px;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+    }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 27px;
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-    margin: 0;
+    margin: 20px;
 }
 
 .logo {
@@ -221,7 +257,7 @@ a {
     border: 1px solid #eabc87;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -241,14 +277,14 @@ a {
     .menu.active {
         display: flex;
     }
-}
+} */
 
 /* HOME et INFO SEANCE Mariage */
 
 /* IMAGE HEADER INDEX */
 .img-index {
     background-image: url(../images/header.jpg);
-    height: 100vh;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -260,16 +296,20 @@ a {
 }
 
 .img-index h1 {
-    margin-top: 0;
+    @media (width > 700px) {
+        margin-top: 20px;
+    }
     font-size: 60px;
 }
 
 .img-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto 16px auto;
-    text-align: center;
-    line-height: 1.6;
+    @media (width > 700px) {
+        max-width: 630px;
+        margin: 0 auto 16px auto;
+        text-align: center;
+        line-height: 1.6;
+    }
+    margin-inline: 30px;
 }
 
 .img-index hr {
@@ -290,7 +330,11 @@ a {
 
 /* ICON SECTION */
 .icon-index {
-    display: flex;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    display: grid;
     justify-content: center;
     align-items: center;
     gap: 50px;
@@ -303,21 +347,27 @@ a {
 
 /* MARIAGE SECTION */
 .mariage-index {
-    display: flex;
-    justify-content: center;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    display: grid;
     align-items: center;
     gap: 50px;
     margin-left: 20px;
+    padding: 20px;
 }
 
 .mariage-index img {
-    width: 600px;
+    @media (width > 700px) {
+        width: 600px;
+    }
+
+    width: 100%;
 }
 
 .mariage-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto 16px auto;
+    max-width: 600px;
     text-align: left;
     line-height: 1.6;
 }
@@ -336,16 +386,25 @@ a {
 
 /* CONTAINERS & SECTIONS */
 .container-mariage {
-    display: flex;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    display: grid;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;
     background-color: #f5f4f2;
     border-radius: 20px;
+    margin: 20px;
 }
 
 .sec-mariage {
-    display: flex;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    display: grid;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
 }
@@ -376,16 +435,24 @@ a {
 /* HOME INFO SEANCE PORTRAITS */
 
 .portraits-index {
-    display: flex;
-    justify-content: center;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    flex-wrap: wrap;
     align-items: center;
     gap: 50px;
+    padding: 30px;
     margin-top: 50px;
     background-color: #f7eef0;
 }
 
 .portraits-index img {
-    width: 600px;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        width: 600px;
+    }
+    width: 400px;
 }
 
 .portraits-index p {
@@ -415,14 +482,20 @@ a {
     align-items: center;
     gap: 50px;
     margin-left: 20px;
-    max-width: 1000px;
+    margin-right: 20px;
+    max-width: 100%;
     margin: 0 auto 16px auto;
     text-align: left;
     line-height: 1.6;
+    padding: 30px;
 }
 
 .maternité p {
-    font-family: sans-serif;
+    display: flex;
+    max-width: 70em;
+    justify-content: center;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
 .btn-maternité {
@@ -438,17 +511,22 @@ a {
 }
 
 .grossesse {
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 50px;
+    margin-left: 20px;
     border-radius: 20px;
 }
 
-.info-grossesse,
-.info-bebe {
-    margin-left: 20px;
+.info-grossesse {
+    @media (width > 700px) {
+        width: 450px;
+    }
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -456,7 +534,23 @@ a {
     border-radius: 20px;
     background-color: #f8e9e7;
     box-shadow: 0 0 15px -3px rgba(107, 107, 107, 0.38);
-    width: 450px;
+    width: 400px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.info-bebe {
+    @media (width > 700px) {
+        width: 450px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #f8e9e7;
+    box-shadow: 0 0 15px -3px rgba(107, 107, 107, 0.38);
+    width: 400px;
     padding: 20px;
 }
 
@@ -468,27 +562,44 @@ a {
 
 .img-grossesse img,
 .img-bebe img {
-    width: 400px;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        width: 500px;
+    }
+    margin-top: 20px;
+    align-items: center;
+    width: 350px;
+    margin-left: 40px;
     transform: rotate(-5deg);
 }
 
 .bebe {
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 30px;
-    margin-left: 20px;
+    margin-left: 40px;
     border-radius: 20px;
+    margin-top: 20px;
 }
 
 /* HOME INFO SEANCE evenement */
 
 .evenement-index {
-    display: flex;
-    justify-content: center;
+    @media (width > 700px) {
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+    }
+    display: grid;
     align-items: center;
     gap: 50px;
-    height: 400px;
+    height: 100%;
+    padding: 30px;
     margin-top: 50px;
     background-color: #f7eef0;
 }
@@ -504,11 +615,16 @@ a {
 }
 
 .evenement-index img {
-    width: 450px;
+    @media (width > 700px) {
+        width: 450px;
+        align-items: center;
+    }
+    width: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 .evenement-index p {
-    font-family: sans-serif;
     max-width: 630px;
     margin: 0 auto 16px auto;
     text-align: left;
@@ -525,31 +641,42 @@ a {
     border: 2px solid rgb(208, 151, 45);
     border-radius: 10px;
     transition: background-color 0.5s;
+    margin-block: 20px;
 }
 
 /* HOME QUI-SUIS-JE */
 
 .qui-suis-je-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-left: 100px;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    display: grid;
+    flex-wrap: wrap;
 }
 
 .qui-suis-je-index img {
-    width: 600px;
+    @media (width > 700px) {
+        width: 600px;
+    }
+    width: 400px;
     margin-right: 80px;
 }
 
 .qui-suis-je-index h1 {
+    margin-left: 40px;
+    margin-right: 40px;
     font-size: 30px;
 }
 
 .qui-suis-je-index p {
-    font-family: sans-serif;
-    max-width: 630px;
-    margin: 0 auto 16px auto;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
     text-align: left;
     line-height: 1.6;
 }
@@ -557,16 +684,25 @@ a {
 /* HOME RDV */
 
 .sec-rdv {
-    display: flex;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 50px;
-    height: 400px;
-    margin-top: 50px;
+    height: 100%;
+    margin-block: 50px;
+    padding: 30px;
     background-color: #f7eef0;
 }
 
 .rdv-intervention {
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
     margin-left: 20px;
     display: flex;
     flex-direction: column;
@@ -576,16 +712,20 @@ a {
     background-color: #f8e9e7;
     box-shadow: 0 0 15px -3px rgba(107, 107, 107, 0.38);
     max-width: 500px;
-    max-height: 300px;
+    height: auto;
     padding: 20px;
+    margin-top: 20px;
 }
 
 .rdv-intervention ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
+    @media (width > 700px) {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    flex-wrap: wrap;
 }
 
 .rdv-intervention li {
@@ -605,10 +745,12 @@ a {
 .col2-index,
 .col3-index {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 /* RGPD */
@@ -672,24 +814,25 @@ textarea {
 
 .form-container {
     align-items: flex-start;
-    width: 400px;
     padding: 25px;
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin: 20px 50px 20px 0;
 }
 
 .map {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    gap: 50px;
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
     align-items: center;
-    margin: 0 50px;
+    margin-block: 50px;
 }
 
 #map {
     height: 200px;
-    width: 30%;
+    width: 100%;
     border-radius: 16px;
 }
 

@@ -1,8 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var latitude = 50.52061107649332;
-    var longitude = 2.6783712245611895;
+import "leaflet";
 
-    var map = L.map("map").setView([latitude, longitude], 15);
+document.addEventListener("DOMContentLoaded", function () {
+    const latitude = 50.52061107649332;
+    const longitude = 2.6783712245611895;
+
+    const map = L.map("map").setView([latitude, longitude], 15);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "&copy; OpenStreetMap contributors",
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .openPopup();
 
     // 👇 corrige le bug de première affichage
-    setTimeout(() => {
-        map.invalidateSize();
-    }, 200);
+    // setTimeout(() => {
+    //     map.invalidateSize();
+    // }, 200);
 });

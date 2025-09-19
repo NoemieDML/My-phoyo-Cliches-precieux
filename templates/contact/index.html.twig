@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 
+{% block javascripts %}
+	{% block importmap %}
+		{{ parent() }}
+		{{ importmap('map') }}
+	{% endblock %}
+{% endblock %}
+
 {% block body %}
 
 	<div class="map">
@@ -61,9 +68,6 @@
 		</div>
 
 		<div id="map"></div>
-		<!-- Script Leaflet -->
-		<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-		<script src="{{ asset('script.js') }}"></script>
 	</div>
 
 {% endblock %}
