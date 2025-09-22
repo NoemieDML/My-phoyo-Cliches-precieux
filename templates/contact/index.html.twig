@@ -64,7 +64,13 @@
 
 				{{ form_end(form) }}
 			</section>
-
+			{% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="alert alert-{{ label }}">
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endfor %}
 		</div>
 
 		<div id="map"></div>

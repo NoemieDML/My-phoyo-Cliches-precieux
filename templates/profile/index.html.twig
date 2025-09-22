@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
 	<div class="profile-container">
 		<h1 class="profile-title">
@@ -36,15 +35,5 @@
 			</div>
 
 		</form>
-
 	</div>
-
-	<script>
-		const form = document.getElementById('downloadForm');
-const msg = document.getElementById('downloadMessage');
-
-form.addEventListener('submit', () => {
-msg.style.display = 'block';
-});
-	</script>
 {% endblock %}

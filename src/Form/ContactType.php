@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 class ContactType extends AbstractType
 {
@@ -43,11 +43,31 @@ class ContactType extends AbstractType
             ])
             ->add('subject', TextType::class, [
                 'attr' => ['class' => 'objet-input'],
-                'label' => 'Objet'
+                'label' => 'Objet',
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'L’objet ne peut pas être vide.'
+                    ]),
+                    new Assert\Length([
+                        'min' => 5,
+                        'minMessage' => 'L’objet doit contenir au moins {{ limit }} caractères.',
+                        'max' => 255, // facultatif
+                    ]),
+                ],
             ])
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'message-input'],
-                'label' => 'Message'
+                'label' => 'Message',
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Le message ne peut pas être vide.'
+                    ]),
+                    new Assert\Length([
+                        'min' => 10,
+                        'minMessage' => 'Le message doit contenir au moins {{ limit }} caractères.',
+                        'max' => 2000, // facultatif
+                    ]),
+                ],
             ]);
     }
 

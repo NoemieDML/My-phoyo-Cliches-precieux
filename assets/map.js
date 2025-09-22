@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .bindPopup("88 Rue Sadi Carnot, Beuvry")
         .openPopup();
 
-    // 👇 corrige le bug de première affichage
+    // corrige le bug de première affichage
     // setTimeout(() => {
     //     map.invalidateSize();
     // }, 200);

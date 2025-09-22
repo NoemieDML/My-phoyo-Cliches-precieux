@@ -6,3 +6,11 @@ import "./bootstrap.js";
  * which should already be in your base.html.twig.
  */
 import "./styles/app.css";
+
+// télechargement d'image
+const form = document.getElementById("downloadForm");
+const msg = document.getElementById("downloadMessage");
+
+form.addEventListener("submit", () => {
+    msg.style.display = "block";
+});

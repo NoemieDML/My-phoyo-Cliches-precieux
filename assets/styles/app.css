@@ -345,6 +345,32 @@ a {
     width: 50px;
 }
 
+/* page infos séance */
+.seance-index {
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    display: grid;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+    background-color: #f7eef0;
+}
+
+.seance-index img {
+    @media (width > 700px) {
+        width: 600px;
+    }
+
+    width: 100%;
+}
+.seance-index p {
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.6;
+}
+
 /* MARIAGE SECTION */
 .mariage-index {
     @media (width > 700px) {
@@ -821,6 +847,7 @@ textarea {
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 30px;
 }
 
 .map {
@@ -831,6 +858,7 @@ textarea {
     }
     align-items: center;
     margin-block: 50px;
+    margin-right: 30px;
 }
 
 #map {

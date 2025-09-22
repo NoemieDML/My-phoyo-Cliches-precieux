@@ -30,7 +30,13 @@ final class ContactController extends AbstractController
             $em->flush();
 
             // Message flash pour confirmer l'enregistrement
-            $this->addFlash('success', 'Message enregistré en base !');
+            $this->addFlash('success', 'Votre message à bien étais envoyer');
+
+            if ($form->isSubmitted() && !$form->isValid()) {
+                $this->addFlash('error', 'Le message n’a pas pu être envoyé. Veuillez vérifier le formulaire.');
+            }
+
+
 
             // Redirection vers la page contact après soumission
             return $this->redirectToRoute('app_contact');
