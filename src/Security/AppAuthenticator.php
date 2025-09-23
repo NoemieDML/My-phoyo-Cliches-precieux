@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 use Symfony\Component\Security\Http\Authenticator\AbstractLoginFormAuthenticator;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\RememberMeBadge;
@@ -26,15 +27,24 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): Passport
     {
-        $email = $request->get('email'); // correction pour récupérer le champ email du formulaire
+        // Récupération des champs du formulaire (en POST uniquement)
+        $email = $request->request->get('email', '');
+        $password = $request->request->get('password', '');
+        $csrfToken = $request->request->get('_csrf_token');
 
+        // Sauvegarde du dernier email saisi
         $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
+
+        // Si email ou mot de passe vide, on lance une exception personnalisée
+        if (!$email || !$password) {
+            throw new CustomUserMessageAuthenticationException('Email ou mot de passe incorrect');
+        }
 
         return new Passport(
             new UserBadge($email),
-            new PasswordCredentials($request->get('password')), // correction pour récupérer le mot de passe
+            new PasswordCredentials($password),
             [
-                new CsrfTokenBadge('authenticate', $request->get('_csrf_token')),
+                new CsrfTokenBadge('authenticate', $csrfToken),
                 new RememberMeBadge(),
             ]
         );
@@ -42,13 +52,13 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        // redirection vers la page demandée avant connexion
+        // Redirection vers la page demandée avant connexion
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
-        // redirection par défaut après connexion réussie
-        return new RedirectResponse($this->urlGenerator->generate('Accueil'));
+        // Redirection par défaut après connexion réussie
+        return new RedirectResponse($this->urlGenerator->generate('Accueil')); // adapte selon ta route
     }
 
     protected function getLoginUrl(Request $request): string

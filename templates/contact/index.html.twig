@@ -51,11 +51,13 @@
 				<div class="form-group icon-input">
 					<span class="icon">📝</span>
 					{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet', 'class': 'form-input'}}) }}
+					{{ form_errors(form.subject) }}
 				</div>
 
 				<div class="form-group icon-input">
 					<span class="icon">💬</span>
 					{{ form_widget(form.content, {'attr': {'placeholder': 'Votre message...', 'class': 'form-input'}}) }}
+					{{ form_errors(form.content) }}
 				</div>
 
 				<div class="form-submit">

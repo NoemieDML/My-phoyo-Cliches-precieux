@@ -51,7 +51,7 @@ class ContactType extends AbstractType
                     new Assert\Length([
                         'min' => 5,
                         'minMessage' => 'L’objet doit contenir au moins {{ limit }} caractères.',
-                        'max' => 255, // facultatif
+                        'max' => 255,
                     ]),
                 ],
             ])

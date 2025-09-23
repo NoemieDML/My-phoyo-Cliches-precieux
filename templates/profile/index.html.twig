@@ -5,6 +5,12 @@
 			Bienvenue sur votre profil
 			{{ app.user.firstName }}
 		</h1>
+
+		<div id="downloadMessage" style="display:none;">
+			Votre téléchargement est en cours...
+		</div>
+
+
 		<p class="photo-count">
 			Vous possédez
 			{{ photos|length }}
@@ -25,7 +31,7 @@
 						class="photo-img" src="{{ asset('uploads/photos/' ~ photo.imagePath) }}" alt="{{ photo.name }}">
 
 						{# Lien pour télécharger une seule image #}
-						<a href="{{ asset('uploads/photos/' ~ photo.imagePath) }}" download="{{ photo.name }}">
+						<a type="submit" href="{{ asset('uploads/photos/' ~ photo.imagePath) }}" download="{{ photo.name }}">
 							Télécharger
 						</a>
 					</div>

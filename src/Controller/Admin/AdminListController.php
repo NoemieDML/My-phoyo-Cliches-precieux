@@ -41,15 +41,26 @@ class AdminListController extends AbstractController
         ]);
     }
 
+
+
     #[Route('/delete/{id}', name: 'admin_users_delete')]
     public function delete(User $user, EntityManagerInterface $em): Response
     {
+        // Récupère les photos liées à l'utilisateur
+        $photos = $em->getRepository(Photo::class)->findBy(['user' => $user]);
+
+        foreach ($photos as $photo) {
+            $em->remove($photo); // supprime chaque photo
+        }
+
+        // Supprimer ensuite l'utilisateur
         $em->remove($user);
         $em->flush();
 
         $this->addFlash('success', 'Utilisateur supprimé avec succès !');
-        return $this->redirectToRoute('admin_users_index');
+        return $this->redirectToRoute('list_user');
     }
+
 
     #[Route('/{id}', name: 'admin_users_show')]
     public function show(User $user): Response

@@ -303,7 +303,7 @@ a {
 }
 
 .img-index p {
-    @media (width > 700px) {
+    @media (min-width: 700px) {
         max-width: 630px;
         margin: 0 auto 16px auto;
         text-align: center;
@@ -853,7 +853,7 @@ textarea {
 .map {
     display: grid;
     gap: 50px;
-    @media (width > 700px) {
+    @media (min-width: 700px) {
         grid-template-columns: repeat(2, 1fr);
     }
     align-items: center;
@@ -1141,6 +1141,72 @@ textarea {
 }
 
 /* Admin */
+
+/* Formulaire de recherche */
+.form-list-admin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.form-list-admininput[type="text"] {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+.form-list-admin button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #eaa89d;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+.form-list-admin button:hover {
+    background-color: #cb8f84;
+}
+
+/* Tableau */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.admin-table th,
+.admin-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+.admin-table th {
+    background-color: #eaa89d;
+    color: white;
+}
+.admin-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Boutons d’action */
+.btn-show {
+    padding: 4px 8px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn-show:hover {
+    background-color: #27ae60;
+}
+.btn-delete {
+    padding: 4px 8px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn-delete:hover {
+    background-color: #c0392b;
+}
 
 .admin-container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
