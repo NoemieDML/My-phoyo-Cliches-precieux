@@ -142,7 +142,8 @@ symfony serve
 
 ---
 
-📖 Guide utilisateur (à inclure dans l'interface ou fournir au client)
+## 📖 Guide utilisateur (à inclure dans l'interface ou fournir au client)
+
 Pour le client (récupérer ses photos)
 
 Le photographe crée/associe la séance et téléverse les photos (via l’interface admin).
@@ -175,7 +176,7 @@ Optionnel : proposer plusieurs résolutions (préviews basse résolution pour la
 
 ---
 
-🔐 Sécurité & bonnes pratiques
+## 🔐 Sécurité & bonnes pratiques
 
 Ne stocke pas les images brutes sur un répertoire public sans contrôle d’accès : utiliser des dossiers publics pour fichiers destinés au téléchargement mais contrôler l’accès via des routes sécurisées ou des URLs signées si nécessaire.
 
@@ -187,7 +188,7 @@ Configurer HTTPS en production.
 
 ---
 
-📅 Roadmap
+## 📅 Roadmap
 
 Notifications email automatiques (photos prêtes).
 
@@ -195,6 +196,6 @@ Espace client avancé : sélectionner photos et commande direct pour tirages/alb
 
 ---
 
-👩‍💻 Auteur
+## 👩‍💻 Auteur
 
 Projet développé par Noémie Armyanski dans le cadre de sa formation en développement web.
