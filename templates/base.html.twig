@@ -8,24 +8,31 @@
 			{% block title %}My Photo Cliches Precieux
 			{% endblock %}
 		</title>
-		<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-		<link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+
+		{# CSS externe #}
+		<link
+		rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+		{# CSS compilé par Webpack Encore #}
+		{{ encore_entry_link_tags('app') }}
+
+		{# Favicon - à placer dans public/images/ #}
 		<link rel="icon" type="image/jpg" href="{{ asset('images/logo.jpg') }}"> {% block stylesheets %}{% endblock %}
+		</head>
+		<body>
+			{% include '_compenents/header.html.twig' %}
 
-		{% block javascripts %}
-			{% block importmap %}
-				{{ importmap('app') }}
+			{% block body %}{% endblock %}
+
+			{% include "_compenents/footer.html.twig" %}
+
+			{# JS compilé par Webpack Encore #}
+			{{ encore_entry_script_tags('app') }}
+
+			{% block javascripts %}
+				{% block importmap %}
+					{{ importmap('app') }}
+				{% endblock %}
 			{% endblock %}
-		{% endblock %}
-	</head>
-	<body>
-		{% include '_compenents/header.html.twig' %}
-
-		{% block body %}{% endblock %}
-
-		{% include "_compenents/footer.html.twig" %}
-	</body>
-	<script type="module" src="{{ asset('app.js') }}"></script>
-
-
-</html>
+		</body>
+	</html>
