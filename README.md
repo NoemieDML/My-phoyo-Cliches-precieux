@@ -114,7 +114,9 @@ chmod -R 775 public/uploads
 
 # ou selon ton environnement :
 
+```bash
 chown -R www-data:www-data public/uploads
+```
 
 ### 6) Builder les assets (si applicable)
 
@@ -188,7 +190,3 @@ Espace client avancé : sélectionner photos et commande direct pour tirages/alb
 👩‍💻 Auteur
 
 Projet développé par Noémie Armyanski dans le cadre de sa formation en développement web.
-
-```
-
-```
