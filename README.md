@@ -51,7 +51,9 @@ _Si ton projet utilise Yarn remplace npm install par yarn install._
 
 # Frontend (assets, build tools)
 
+```bash
 npm install
+```
 
 ### 3) Configurer l’environnement
 
@@ -82,22 +84,33 @@ Créer la base et lancer les migrations :
 
 # créer la BDD
 
+```bash
 php bin/console doctrine:database:create
+```
 
 # exécuter les migrations (si le projet en contient)
 
+```bash
 php bin/console doctrine:migrations:migrate --no-interaction
+```
 
 _(Si tu utilises des fixtures de test/dev :)_
+
+```bash
 php bin/console doctrine:fixtures:load --no-interaction
+```
 
 ### 5) Préparer le dossier uploads (permissions)
 
+```bash
 mkdir -p public/uploads/sessions
+```
 
 # sous Linux : s'assurer que le serveur web peut écrire
 
+```bash
 chmod -R 775 public/uploads
+```
 
 # ou selon ton environnement :
 
@@ -107,16 +120,23 @@ chown -R www-data:www-data public/uploads
 
 # en dev
 
+```bash
 npm run dev
+```
 
 # ou pour la production
 
+```bash
 npm run build
+```
 
 ### 7) Lancer le serveur
 
 Option A — avec Symfony CLI (recommandé) :
+
+```bash
 symfony serve
+```
 
 📖 Guide utilisateur (à inclure dans l'interface ou fournir au client)
 Pour le client (récupérer ses photos)
@@ -168,3 +188,7 @@ Espace client avancé : sélectionner photos et commande direct pour tirages/alb
 👩‍💻 Auteur
 
 Projet développé par Noémie Armyanski dans le cadre de sa formation en développement web.
+
+```
+
+```
