@@ -140,6 +140,8 @@ Option A — avec Symfony CLI (recommandé) :
 symfony serve
 ```
 
+---
+
 📖 Guide utilisateur (à inclure dans l'interface ou fournir au client)
 Pour le client (récupérer ses photos)
 
@@ -171,6 +173,8 @@ Vérifier les permissions du dossier public/uploads pour éviter les erreurs d�
 
 Optionnel : proposer plusieurs résolutions (préviews basse résolution pour la galerie publique et fichiers haute résolution en téléchargement privé).
 
+---
+
 🔐 Sécurité & bonnes pratiques
 
 Ne stocke pas les images brutes sur un répertoire public sans contrôle d’accès : utiliser des dossiers publics pour fichiers destinés au téléchargement mais contrôler l’accès via des routes sécurisées ou des URLs signées si nécessaire.
@@ -181,11 +185,15 @@ Prévoir sauvegarde régulière du dossier public/uploads et de la base de donn�
 
 Configurer HTTPS en production.
 
+---
+
 📅 Roadmap
 
 Notifications email automatiques (photos prêtes).
 
 Espace client avancé : sélectionner photos et commande direct pour tirages/albums.
+
+---
 
 👩‍💻 Auteur
 
