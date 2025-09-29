@@ -1,38 +1,46 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
 	<h1 class="title">Messages du formulaire de contact</h1>
 	<a href="{{ path('app_admin') }}" class="back-button">← Retour à la page admin</a>
-	<div class="cards-container">
-		{% for contact in contacts %}
-			<div class="contact-card {{ contact.isSeen ? 'seen' : 'unseen' }}">
-				<h2>{{ contact.firstName }}
-					{{ contact.lastName }}</h2>
-				<p>
-					<strong>Email:</strong>
-					{{ contact.email }}</p>
-				<p>
-					<strong>Téléphone:</strong>
-					{{ contact.phone }}</p>
-				<p>
-					<strong>Objet:</strong>
-					{{ contact.subject }}</p>
-				<p>
-					<strong>Message:</strong>
-					{{ contact.content }}</p>
 
-				<p class="date">Date souhaitez le :
-					{{ contact.publichedAt ? contact.publichedAt|date('d/m/Y H:i') : 'Non défini' }}</p>
-				<!-- Formulaire suppression -->
-				<form method="post" action="{{ path('admin_contact_delete', {'id': contact.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce message ?');">
-					<button type="submit" class="delete-btn">Supprimer</button>
-				</form>
+	{# Messages flash #}
+	{% for label, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="alert alert-{{ label }}">
+				{{ message }}
 			</div>
-		{% else %}
-			<p>Aucun message trouvé.</p>
 		{% endfor %}
+	{% endfor %}
 
+	<div class="cards-container">
+		{% if contacts is empty %}
+			<p>Aucun message trouvé.</p>
+		{% else %}
+			{% for contact in contacts %}
+				<div class="contact-card {{ contact.isSeen ? 'seen' : 'unseen' }}">
+					<h2>{{ contact.firstName }}
+						{{ contact.lastName }}</h2>
+					<p>
+						<strong>Email:</strong>
+						{{ contact.email }}</p>
+					<p>
+						<strong>Téléphone:</strong>
+						{{ contact.phone }}</p>
+					<p>
+						<strong>Objet:</strong>
+						{{ contact.subject }}</p>
+					<p>
+						<strong>Message:</strong>
+						{{ contact.content }}</p>
+					<p class="date">Date souhaitée :
+						{{ contact.publichedAt ? contact.publichedAt|date('d/m/Y H:i') : 'Non défini' }}</p>
+
+					<form method="post" action="{{ path('admin_contact_delete', {'id': contact.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce message ?');">
+						<button type="submit" class="delete-btn">Supprimer</button>
+					</form>
+				</div>
+			{% endfor %}
+		{% endif %}
 	</div>
-
 {% endblock %}

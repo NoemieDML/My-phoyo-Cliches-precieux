@@ -26,11 +26,14 @@ class AdminContactController extends AbstractController
     #[Route('/admin/contact/delete/{id}', name: 'admin_contact_delete', methods: ['POST'])]
     public function delete(Contact $contact, EntityManagerInterface $em): Response
     {
+        // Supprimer le contact
         $em->remove($contact);
         $em->flush();
 
+        // Ajouter le message flash
         $this->addFlash('success', 'Le message a été supprimé.');
 
+        // Rediriger vers la liste des contacts (méthode index)
         return $this->redirectToRoute('admin_contacts');
     }
 }

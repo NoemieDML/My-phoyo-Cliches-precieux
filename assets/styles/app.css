@@ -477,7 +477,7 @@ a {
         grid-template-columns: repeat(2, 1fr);
         width: 600px;
     }
-    width: 400px;
+    width: 300px;
 }
 
 .portraits-index p {
@@ -595,10 +595,10 @@ a {
         display: grid;
         width: 500px;
     }
-    margin-top: 20px;
     align-items: center;
-    width: 350px;
-    margin-left: 40px;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 270px;
     transform: rotate(-5deg);
 }
 
@@ -647,7 +647,7 @@ a {
         width: 450px;
         align-items: center;
     }
-    width: 400px;
+    width: 300px;
     display: flex;
     justify-content: center;
 }
@@ -691,8 +691,8 @@ a {
     @media (width > 700px) {
         width: 600px;
     }
-    width: 400px;
-    margin-right: 80px;
+    width: 300px;
+    margin-right: 0px;
 }
 
 .qui-suis-je-index h1 {
